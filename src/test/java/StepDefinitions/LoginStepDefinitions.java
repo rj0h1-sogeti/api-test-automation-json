@@ -3,11 +3,10 @@ package StepDefinitions;
 import io.cucumber.java.en.Given;
 import io.restassured.RestAssured;
 import services.ConfigurationService;
-import sogeti.api.context.World;
 
 public class LoginStepDefinitions {
 
-    private ConfigurationService service;
+    private final ConfigurationService service;
 
     public LoginStepDefinitions(ConfigurationService configurationService) {
 
