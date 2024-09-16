@@ -1,13 +1,11 @@
 package models;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class MultipleApis {
-    private Map<String, Api> apis = new HashMap<>();
+    private Map<String, Api> apis;
 
-    public void MultipleApis(Map<String, Api> apis) {
-        this.apis = apis;
+    public MultipleApis() {
     }
 
     public Api getApi(String name) {

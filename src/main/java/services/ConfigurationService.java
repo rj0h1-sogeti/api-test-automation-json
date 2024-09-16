@@ -8,8 +8,6 @@ import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
 
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 @Data
 public class ConfigurationService {
@@ -23,9 +21,9 @@ public class ConfigurationService {
     private <T> T initializeFromYaml(String yamlFilePath, Class<T> type) {
         try (InputStream inputStream = this.getClass()
                 .getClassLoader()
-                .getResourceAsStream("env/wizard.yaml")) {
+                .getResourceAsStream(yamlFilePath)) {
             Yaml yaml = new Yaml(new Constructor(type, new LoaderOptions()));
-            return yaml.load(inputStream);
+            return yaml.loadAs(inputStream, type);
         } catch (Exception e) {
             System.err.println("Error reading YAML file: " + e.getMessage());
             return null;
@@ -34,7 +32,7 @@ public class ConfigurationService {
 
     public void initializeApis() {
 
-        apis = initializeFromYaml("/env/wizard.yaml", MultipleApis.class);
+        apis = initializeFromYaml("/env/applications.yaml", MultipleApis.class);
 
         if (apis != null) {
             System.out.println("Object initialized: " + apis);

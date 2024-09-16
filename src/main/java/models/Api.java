@@ -2,16 +2,12 @@ package models;
 
 import lombok.Data;
 
-import java.io.InputStream;
-
 @Data
 public class Api {
 
-    String name;
-    String baseUrl;
+    private String scheme;
+    private String uri;
 
-    public Api(String name, String baseUrl) {
-        this.name = name;
-        this.baseUrl = baseUrl;
+    public Api() {
     }
 }

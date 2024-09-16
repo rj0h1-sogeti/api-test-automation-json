@@ -7,17 +7,18 @@ import sogeti.api.context.World;
 
 public class LoginStepDefinitions {
 
-    private World world;
     private ConfigurationService service;
 
-    public LoginStepDefinitions(World world, ConfigurationService configurationService) {
+    public LoginStepDefinitions(ConfigurationService configurationService) {
 
-        this.world = world;
         this.service = configurationService;
     }
     @Given("user wants to access the {string} api")
     public void userWantsToAccessTheWizardWorldApi(String apiName) {
+
         service.initializeApis();
-        RestAssured.basePath = service.getApis().getApi(apiName).getBaseUrl();
+        RestAssured.baseURI = service.getApis().getApi(apiName).getScheme() + "://"
+                + service.getApis().getApi(apiName).getUri();
+
     }
 }

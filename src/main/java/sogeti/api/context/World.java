@@ -11,9 +11,7 @@ import java.util.Map;
 public class World {
 
 
-    private String baseUri;
-
-    private String host;
+    private String baseURI;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(World.class);
 
