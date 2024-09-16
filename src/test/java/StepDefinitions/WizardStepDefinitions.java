@@ -22,7 +22,7 @@ public class WizardStepDefinitions {
         this.world = world;
     }
 
-    @Given("that user wants to use the Elixir endpoint")
+    @Given("that user wants to review the list of Elixirs")
     public void usingElixirEndpoint() {
         world.setBaseUri("Elixirs");
     }
@@ -44,7 +44,7 @@ public class WizardStepDefinitions {
     }
 
 
-    @And("the user receives a successful http status code")
+    @And("the user receives a successful response for a list request")
     public void theUserReceivesASuccessfulHttpStatusCode() {
         response.then().assertThat().statusCode(200);
     }
