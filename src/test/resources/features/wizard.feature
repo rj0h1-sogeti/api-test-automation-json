@@ -1,6 +1,6 @@
 Feature: feature file that tests WizardWorldApi
 
-   Background: user is testing the wizerd-world-api
+   Background: user is testing the wizard-world-api
      Given user wants to access the "wizard" api
 
   Scenario: retrieve list of all elixirs and validate response
