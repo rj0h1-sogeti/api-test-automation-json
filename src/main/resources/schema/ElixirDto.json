@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft-04/schema",
+  "id": "http://example.com/example.json",
+  "title": "Root Schema",
+  "type": "array",
+  "default": [],
+  "items": {
+    "title": "A Schema",
+    "type": "object",
+    "required": [
+      "id",
+      "name",
+      "effect",
+      "sideEffects",
+      "characteristics",
+      "time",
+      "difficulty",
+      "ingredients",
+      "inventors",
+      "manufacturer"
+    ],
+    "properties": {
+      "id": {
+        "title": "The id Schema",
+        "type": "string"
+      },
+      "name": {
+        "title": "The name Schema",
+        "type": "string"
+      },
+      "effect": {
+        "title": "The effect Schema",
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "sideEffects": {
+        "title": "The sideEffects Schema",
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "characteristics": {
+        "title": "The characteristics Schema",
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "time": {
+        "title": "The time Schema",
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "difficulty": {
+        "title": "The difficulty Schema",
+        "type": "string",
+        "enum": ["Unknown", "Advanced", "Moderate", "Beginner", "OrdinaryWizardingLevel", "OneOfAKind"]
+      },
+      "ingredients": {
+        "title": "The ingredients Schema",
+        "type": "array",
+        "items": {
+          "title": "A Schema",
+          "type": "object",
+          "required": [
+            "id",
+            "name"
+          ],
+          "properties": {
+            "id": {
+              "title": "The id Schema",
+              "type": "string"
+            },
+            "name": {
+              "title": "The name Schema",
+              "type": "string"
+            }
+          }
+        },
+        "uniqueItems": false
+      },
+      "inventors": {
+        "title": "The inventors Schema",
+        "type": "array",
+        "items": {
+          "title": "A Schema",
+          "type": "object",
+          "required": [
+            "id",
+            "firstName",
+            "lastName"
+          ],
+          "properties": {
+            "id": {
+              "title": "The id Schema",
+              "type": "string"
+            },
+            "firstName": {
+              "title": "The firstName Schema",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "lastName": {
+              "title": "The lastName Schema",
+              "type": "string"
+            }
+          }
+        },
+        "uniqueItems": false
+      },
+      "manufacturer": {
+        "title": "The manufacturer Schema",
+        "type": [
+          "null",
+          "string"
+        ]
+      }
+    }
+  },
+  "uniqueItems": false
+}

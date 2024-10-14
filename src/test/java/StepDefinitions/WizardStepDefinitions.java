@@ -7,20 +7,13 @@ import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import services.ConfigurationService;
-import sogeti.api.context.World;
+
 
 public class WizardStepDefinitions {
 
     private Response response;
-    private final Logger logger = LoggerFactory.getLogger(WizardStepDefinitions.class);
-    private ConfigurationService service;
 
-    public WizardStepDefinitions(ConfigurationService service)  {
-
-        this.service = service;
+    public WizardStepDefinitions(LoginStepDefinitions loginStepDefinitions)  {
     }
 
     @Given("that user wants to review the list of Elixirs")
@@ -38,7 +31,7 @@ public class WizardStepDefinitions {
     @Then("the user receives a list of all elixirs and their ids")
     public void receiveListElixirs() {
 
-            response.then().log().all().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schema/elixirs.json"));
+            response.then().log().all().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schema/ElixirDto.json"));
 
     }
 
