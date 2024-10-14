@@ -1,6 +1,0 @@
-apis:
-  wizard:
-    scheme: http
-    uri: wizard-world-api.herokuapp.com
-
-
