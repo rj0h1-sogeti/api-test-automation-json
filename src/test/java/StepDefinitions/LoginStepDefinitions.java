@@ -8,7 +8,7 @@ public class LoginStepDefinitions {
     @Given("user wants to access the wizard api")
     public void userWantsToAccessTheWizardWorldApi() {
 
-        RestAssured.baseURI = "http://wizard-world-api.herokuapp.com";
+        RestAssured.baseURI = "https://wizard-world-api.herokuapp.com";
 
     }
 }
