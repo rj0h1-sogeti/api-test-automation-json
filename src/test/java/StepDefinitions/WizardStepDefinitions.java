@@ -13,9 +13,6 @@ public class WizardStepDefinitions {
 
     private Response response;
 
-    public WizardStepDefinitions(LoginStepDefinitions loginStepDefinitions)  {
-    }
-
     @Given("that user wants to review the list of Elixirs")
     public void usingElixirEndpoint() {
         RestAssured.basePath = "Elixirs";
