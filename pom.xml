@@ -182,13 +182,6 @@
             <version>2.34.0</version>
         </dependency>
 
-        <!--openApi generator-->
-        <dependency>
-            <groupId>org.openapitools</groupId>
-            <artifactId>openapi-generator-maven-plugin</artifactId>
-            <version>6.6.0</version>
-        </dependency>
-
     </dependencies>
 
     <build>
@@ -208,48 +201,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
-            </plugin>
-
-            <plugin>
-                <groupId>org.openapitools</groupId>
-                <artifactId>openapi-generator-maven-plugin</artifactId>
-                <version>6.6.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <inputSpec>${project.basedir}/src/main/resources/spec/hotel_openapi.yaml</inputSpec>
-                            <generatorName>java</generatorName>
-                            <generateModels>true</generateModels>
-                            <generateApiTests>false</generateApiTests>
-                            <generateModelTests>false</generateModelTests>
-                            <generateSupportingFiles>true</generateSupportingFiles>
-                            <modelPackage>hotel.model</modelPackage>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>1.8</version>
-                <executions>
-                    <execution>
-                        <id>add-gen-source</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>generated-sources/hotel</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
 
         </plugins>
